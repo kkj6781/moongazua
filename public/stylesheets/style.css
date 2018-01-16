@@ -1,10 +1,21 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
-body {
-  padding: 50px 50px 0px 50px;
-  font: 16px "Nanum Gothic", "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #ccc;
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0px;
+    font: 16px "Nanum Gothic", "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #ccc;
+  }
 }
+@media screen and (min-width: 480px) {
+  body {
+    padding: 50px 50px 0px 50px;
+    font: 16px "Nanum Gothic", "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: #ccc;
+  }
+}
+
 
 a {
   color: #00B7FF;
@@ -29,13 +40,26 @@ input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
-.main-container {
-  margin-left: 20%;
-  margin-right: 20%;
-  padding: 20px;
-  background-color: white;
-  height: 100vh;
-  min-height: 1000px;
+@media screen and (max-width: 480px) {
+  .main-container {
+    margin-left: 0%;
+    margin-right: 0%;
+    padding: 20px;
+    background-color: white;
+    height: 100vh;
+    min-height: 1200px;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  .main-container {
+    margin-left: 20%;
+    margin-right: 20%;
+    padding: 20px;
+    background-color: white;
+    height: 100vh;
+    min-height: 1000px;
+  }
 }
 
 .preset-emoji {
@@ -49,21 +73,44 @@ input.ng-invalid.ng-touched {
   margin-bottom: 30px;
 }
 
-.referral-links {
-  margin-left: 50px;
+@media screen and (max-width: 480px) {
+  .referral-links {
+    margin-left: 20px;
+  }
+  
+  .goobsin-goobsin {
+    margin-top: 20px; 
+  }
+}
+@media screen and (min-width: 480px) {
+  .referral-links {
+    margin-left: 50px;
+  }
+  
+  .goobsin-goobsin {
+    margin-top: 100px; 
+  }
 }
 
-.goobsin-goobsin {
-  margin-top: 100px; 
+
+@media screen and (max-width: 480px) {
+  footer {
+    margin: 5px;
+  }
+  
+  .disclaimer {
+    font-size: 80%;
+  }
+}
+@media screen and (min-width: 480px) {
+  footer {
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .disclaimer {
+    font-size: 80%;
+    padding: 20px 20px 0px 20px;
+  }
 }
 
-
-footer {
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-.disclaimer {
-  font-size: 80%;
-  padding: 20px 20px 0px 20px;
-}
