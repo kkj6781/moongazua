@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
         })
         .subscribe(price => {
             this.todayPrice = price[this.coin].USD;
+            console.log("today: $", this.todayPrice, " ", this.coin);
         });
     }
 
@@ -45,6 +46,7 @@ export class AppComponent implements OnInit {
         })
         .subscribe(price => {
             this.historicPrice = price[this.coin].USD;
+            console.log("historic: $", this.historicPrice, " ", this.coin);
         });
     }
 

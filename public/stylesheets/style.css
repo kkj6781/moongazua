@@ -35,7 +35,7 @@ input.ng-invalid.ng-touched {
   padding: 20px;
   background-color: white;
   height: 100vh;
-  min-height: 800px;
+  min-height: 1000px;
 }
 
 .preset-emoji {

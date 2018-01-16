@@ -5,10 +5,6 @@
     
     <div class="obnoxious-emoji">
         👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙
-        <div class="easter-egg" *ngIf="coin=='DOGE'">
-            <span style="font-size: 10px">Such surprise much wow very smile</span>
-            <img src="https://www.cryptocompare.com/media/19684/doge.png"style="width: 30px">
-        </div>
     </div>
 </div>
 
@@ -18,10 +14,15 @@
     <select [(ngModel)]="coin" (ngModelChange)="paramChanged($event)" name="coin">
         <option value="BTC" selected>Bitcoin</option>
         <option value="ETH">Ethereum</option>
+        <option value="NEO">NEO</option>        
+        <option value="GAS">Gas</option>        
         <option value="LTC">Litecoin</option>
         <option value="RPX">Ripple</option>        
+        <option value="IOTA">IOTA</option>        
+        <option value="DASH">DigitalCash</option>        
+        <option value="QTUM">QTUM</option>        
+        <option value="TRX">Tronix</option>        
         <option value="ADA">Cardano</option>                
-        <option value="NEO">NEO</option>
         <option value="DOGE">Dogecoin</option>        
     </select>
 
@@ -60,7 +61,7 @@
     ${{ (todayPrice / historicPrice * moneyWasted.toString().replace(",","")).toFixed(2)}}.
     </span>
     <span *ngIf="moneyWasted && !historicPrice">
-       ¯|_(ツ)_/¯ (price data not available at that time period - select again).
+       ¯|_(ツ)_/¯ (price data not available for that time period - select again).
     </span>
 
 </div>
