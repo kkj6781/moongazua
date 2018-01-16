@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
     @Input() todayPrice = 1;
     @Input() historicPrice = 1;
 
+    @Output() moneyWasted;
     @Output() coin = "BTC";
     @Output() day = "01";
     @Output() month = "00";
