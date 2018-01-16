@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
 
     @Output() coin = "BTC";
     @Output() day = "01";
-    @Output() month = "01";
+    @Output() month = "00";
     @Output() year = "2013";
 
     ngOnInit(): void {
