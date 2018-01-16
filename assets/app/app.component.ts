@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
     @Input() historicPrice = 1;
 
     @Output() coin = "BTC";
+    @Output() day = "01";
     @Output() month = "01";
     @Output() year = "2013";
 
@@ -38,7 +39,7 @@ export class AppComponent implements OnInit {
     getHistoricData() {
         let apiURLHistoric : string = "https://min-api.cryptocompare.com/data/pricehistorical?tsyms=USD";
         apiURLHistoric += "&fsym="+this.coin;
-        const date : Number = Math.floor(new Date(Number(this.year), Number(this.month), 1).getTime()/1000);
+        const date : Number = Math.floor(new Date(Number(this.year), Number(this.month), Number(this.day)).getTime()/1000);
         apiURLHistoric += "&ts=" + date;
         this.http.get(apiURLHistoric)
         .map(response => {
