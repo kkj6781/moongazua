@@ -5,21 +5,27 @@
     
     <div class="obnoxious-emoji">
         👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙
+        <div class="easter-egg" *ngIf="coin=='DOGE'">
+            <span style="font-size: 10px">Such surprise much wow very smile</span>
+            <img src="https://www.cryptocompare.com/media/19684/doge.png"style="width: 30px">
+        </div>
     </div>
 </div>
 
 <div class="main-regret-container">
-
     Had I bought
 
     <select [(ngModel)]="coin" (ngModelChange)="paramChanged($event)" name="coin">
         <option value="BTC" selected>Bitcoin</option>
         <option value="ETH">Ethereum</option>
         <option value="LTC">Litecoin</option>
+        <option value="RPX">Ripple</option>        
+        <option value="ADA">Cardano</option>                
         <option value="NEO">NEO</option>
+        <option value="DOGE">Dogecoin</option>        
     </select>
 
-    instead of spending $<input type="usd" placeholder="ex) 1000" style="width: 80px" [(ngModel)]="moneyWasted">
+    instead of spending $<input type="usd" placeholder="ex) 1000" style="width: 85px" [(ngModel)]="moneyWasted">
 
     in 
 
@@ -44,19 +50,23 @@
         <option value="2015">2015</option>
         <option value="2016">2016</option>
         <option value="2017">2017</option>
+        <option value="2018">2018</option>
     </select>
     then I would have
     <span *ngIf="!moneyWasted">
     $____.
     </span>
-    <span *ngIf="moneyWasted" style="font-size: 130%">
+    <span *ngIf="moneyWasted && historicPrice" style="font-size: 130%">
     ${{ (todayPrice / historicPrice * moneyWasted.toString().replace(",","")).toFixed(2)}}.
+    </span>
+    <span *ngIf="moneyWasted && !historicPrice">
+       ¯|_(ツ)_/¯ (price data not available at that time period - select again).
     </span>
 
 </div>
 
 <div class="items-full-of-regret" style="margin-top: 20px">
-    <p>Click icons to activate pre-sets<sup>*</sup> </p>
+    <p>Click below icons to activate pre-set prices<sup>*</sup> </p>
     <div class="row">
         <span class="preset-emoji" (click)="moneyWasted=0.99">🍌</span>            
         <span class="preset-emoji" (click)="moneyWasted=4.79">🍔</span>
@@ -77,7 +87,7 @@
 </div>
 
 <div class="no-more-regret-container">
-    <h4> Good news! It's <i>never</i> too late to make a good choice. </h4>
+    <h4> Good news! It's <i>never</i> too late to make a good choice (<a href="https://i.imgur.com/e1xfX0s.jpg">image</a>).</h4> 
     <p> Join the Crypto communities to start investing: </p>
     <div class="referral-links">
         <p>
