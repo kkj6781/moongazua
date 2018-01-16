@@ -1,0 +1,111 @@
+<div class="main-container">
+
+<div class="gazua" style="margin-bottom: 50px">
+    <span style="font-size: 30px; font-weight: 900">GAZUA ("Let's go" in Korean) TO THE MOON</span>
+    
+    <div class="obnoxious-emoji">
+        👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙👩‍🚀👨‍🚀🏎️🚀🌙
+    </div>
+</div>
+
+<div class="main-regret-container">
+
+    Had I bought
+
+    <select [(ngModel)]="coin" (ngModelChange)="paramChanged($event)" name="coin">
+        <option value="BTC" selected>Bitcoin</option>
+        <option value="ETH">Ethereum</option>
+        <option value="LTC">Litecoin</option>
+        <option value="NEO">NEO</option>
+    </select>
+
+    instead of spending $<input type="usd" placeholder="ex) 1000" style="width: 80px" [(ngModel)]="moneyWasted">
+
+    in 
+
+    <select [(ngModel)]="month" (ngModelChange)="paramChanged($event)" name="month">
+        <option value="01" selected>January</option>
+        <option value="02">February</option>
+        <option value="03">March</option>
+        <option value="04">April</option>
+        <option value="05">May</option>
+        <option value="06">June</option>
+        <option value="07">July</option>
+        <option value="08">August</option>
+        <option value="09">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+    </select>
+
+    <select [(ngModel)]="year" (ngModelChange)="paramChanged($event)" name="year">
+        <option value="2013" selected>2013</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+    </select>
+    then I would have
+    <span *ngIf="!moneyWasted">
+    $____.
+    </span>
+    <span *ngIf="moneyWasted" style="font-size: 130%">
+    ${{ (todayPrice / historicPrice * moneyWasted.toString().replace(",","")).toFixed(2)}}.
+    </span>
+
+</div>
+
+<div class="items-full-of-regret" style="margin-top: 20px">
+    <p>Click icons to activate pre-sets<sup>*</sup> </p>
+    <div class="row">
+        <span class="preset-emoji" (click)="moneyWasted=0.99">🍌</span>            
+        <span class="preset-emoji" (click)="moneyWasted=4.79">🍔</span>
+        <span class="preset-emoji" (click)="moneyWasted=5">🍺</span>
+        <span class="preset-emoji" (click)="moneyWasted=7.99">🍕</span>
+        <span class="preset-emoji" (click)="moneyWasted=59.99">🎮</span>
+        <span class="preset-emoji" (click)="moneyWasted=699">📱</span>
+        <span class="preset-emoji" (click)="moneyWasted=20000">🚗</span>
+        <span class="preset-emoji" (click)="moneyWasted=300000">🏠</span>
+        <span class="preset-emoji" (click)="moneyWasted=18000000">✈️</span> 
+        <span class="preset-emoji" (click)="moneyWasted=27500000">🏰</span>             
+    </div>
+    <div class="row" style="float: right; margin-top: 10px; margin-right: 10px">
+        ✈️: <a href="https://www.jamesedition.com/jets/embraer/legacy-650/2010-legacy-650-681583">Source</a>
+        🏰: <a href="https://www.jamesedition.com/real_estate/monterrey-mexico/ecoscopic-house-10140368">Source</a>
+    </div>
+
+</div>
+
+<div class="no-more-regret-container">
+    <h4> Good news! It's <i>never</i> too late to make a good choice. </h4>
+    <p> Join the Crypto communities to start investing: </p>
+    <div class="referral-links">
+        <p>
+            <a href="https://www.coinbase.com/join/593ff78624ce7440ff91ce3a">Coinbase</a>
+        </p>
+        <p>
+            <a href="https://www.binance.com/?ref=10053598">Binance</a>
+        </p>
+        <p>
+            <a href="https://www.kucoin.com/#/?r=E395lO">Kucoin</a>
+        </p>
+    </div>
+</div>
+
+<div class="goobsin-goobsin">
+    <h4>If you found this website enjoyable, then please help me host this website:</h4>
+    <div class="referral-links">
+        <p>
+            <u>BTC</u>: 1De7JxZNULJEFRx6jHegfgHMju5qqgKnyW
+        </p>
+        <p>
+            <u>ETH</u>: 0x1546386c8c652c2f6c3866c0560515c50183757b
+        </p>
+        <p>
+            <u>NEO/GAS</u>: AZjJAY4wQK2m45aX4nk2EbnzU3iiugBn4S
+        </p>
+        <h6>I would appreicate any donation - friendly remember that NEO has to be a whole number</h6>
+    </div>
+</div>
+
+</div>
